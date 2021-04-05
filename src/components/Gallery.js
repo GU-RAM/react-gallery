@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
+import { GiCancel } from 'react-icons/gi';
 
 const Gallery = ({ images }) => {
   const [lightBox, setLighbox] = useState(false);
@@ -20,15 +21,20 @@ const Gallery = ({ images }) => {
   return (
     <div className='gallery-wrapper'>
       {!lightBox && (
-        <div className='gallery-static' onClick={() => setLighbox(!lightBox)}>
-          {images.map((image, index) => {
-            return <img key={index} src={image} alt='animal' />;
-          })}
+        <div className='gallery-static-wrapper'>
+          <div className='gallery-static' onClick={() => setLighbox(!lightBox)}>
+            {images.map((image, index) => {
+              return <img key={index} src={image} alt='animal' />;
+            })}
+          </div>
         </div>
       )}
       {lightBox && (
         <div className='gallery-dynamic-wrapper'>
           <div className='gallery-dynamic'>
+            <div className='cancel' onClick={() => setLighbox(!lightBox)}>
+              <GiCancel />
+            </div>
             <div className='arrow-prev' onClick={prevImage}>
               <AiOutlineArrowLeft />
             </div>
