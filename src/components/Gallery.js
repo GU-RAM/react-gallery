@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 import { GiCancel } from 'react-icons/gi';
 
-function anri(images, current) {
+function imageSrc(images, current) {
   return images.find((image, index) => index === current);
 }
 
@@ -40,7 +40,7 @@ const Gallery = ({ images }) => {
             <div className='arrow-prev' onClick={prevImage}>
               <AiOutlineArrowLeft />
             </div>
-            <img src={anri(images, current)} alt='animal' />;
+            <img src={imageSrc(images, current)} alt='animal' />;
             <div className='arrow-next' onClick={nextImage}>
               <AiOutlineArrowRight />
             </div>
