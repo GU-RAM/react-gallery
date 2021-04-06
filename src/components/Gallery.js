@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 import { GiCancel } from 'react-icons/gi';
 
+function anri(images, current) {
+  return images.find((image, index) => index === current);
+}
+
 const Gallery = ({ images }) => {
   const [lightBox, setLighbox] = useState(false);
   const [current, setCurrent] = useState(0);
@@ -15,8 +19,6 @@ const Gallery = ({ images }) => {
   const prevImage = () => {
     setCurrent(prevState => (prevState === 0 ? prevState : prevState - 1));
   };
-
-  const curentImage = [images.find((image, index) => index === current)];
 
   return (
     <div className='gallery-wrapper'>
@@ -38,9 +40,7 @@ const Gallery = ({ images }) => {
             <div className='arrow-prev' onClick={prevImage}>
               <AiOutlineArrowLeft />
             </div>
-            {curentImage.map((image, index) => {
-              return <img key={index} src={image} alt='animal' />;
-            })}
+            <img src={anri(images, current)} alt='animal' />;
             <div className='arrow-next' onClick={nextImage}>
               <AiOutlineArrowRight />
             </div>
