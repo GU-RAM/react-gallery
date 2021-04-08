@@ -5,6 +5,13 @@ import tiger from '../assets/images/tiger.jpeg';
 import tutiyushi from '../assets/images/tutiyushi.jpg';
 import machvi from '../assets/images/machvi.jpg';
 
-const GalleryData = [dog, leopard, lion, tiger, tutiyushi, machvi];
+const GalleryData = [
+  { src: dog, alt: 'dog' },
+  { src: leopard, alt: 'leopard' },
+  { src: lion, alt: 'lion' },
+  { src: tiger, alt: 'tiger' },
+  { src: tutiyushi, alt: 'tutiyushi' },
+  { src: machvi, alt: 'machvi' },
+];
 
 export default GalleryData;
